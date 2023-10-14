@@ -6,6 +6,7 @@ const Joi = require('joi')
 //const data = require('./.newsdata')
 const sequelize = require('./config/db')
 const mysql = require('mysql2')
+const router = require('./controllers/newsControllers')
 
 const app = express()
 
