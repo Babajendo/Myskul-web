@@ -7,7 +7,7 @@ const { error } = validateNewsTable();
 
 if (error !== undefined) {
   throw new Error("Validation error");
-}
+} 
 
 const createNews = async (req, res) => {
   const {
