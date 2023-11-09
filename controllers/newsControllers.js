@@ -7,7 +7,7 @@ const { error } = validateNewsTable();
 
 if (error !== undefined) {
   throw new Error("Validation error");
-} 
+}
 
 const createNews = async (req, res) => {
   const {
@@ -36,7 +36,7 @@ const createNews = async (req, res) => {
     throw new Error("Validation error");
   }
 
-    const newsId = uuidv4();
+  const newsId = uuidv4();
   try {
     await Newz.create({
       news_id: newsId,

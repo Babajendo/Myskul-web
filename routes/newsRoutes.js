@@ -1,23 +1,27 @@
-const express = require('express')
-const { createNews, getAllNews, getSingleNews, updateNews, deleteNews } = require('../controllers/newsControllers')
-const router = express.Router()
-
+const express = require("express");
+const {
+  createNews,
+  getAllNews,
+  getSingleNews,
+  updateNews,
+  deleteNews,
+} = require("../controllers/newsControllers");
+const isAdmin = require("../controllers/Admin");
+const router = express.Router();
 
 // GET all Newz
-router.get('/get-all', getAllNews)
+router.get("/news", getAllNews);
 
 // GET single Newz
-router.get('/get-single', getSingleNews)
+router.get("/news/:Id", getSingleNews);
 
-// POST Newz
-router.post('/create', createNews)
+// CREATE a new newz (requires admin privileges)
+router.post("/news", isAdmin, createNews);
 
-// UPDATE Newz
-router.patch('/update', updateNews)
+// UPDATE a newz by ID (requires admin privileges)
+router.patch("/news/:newsId", isAdmin, updateNews);
 
-// DELETE Newz
-router.delete('/delete', deleteNews)
+// DELETE a newz by ID (requires admin privileges)
+router.delete("/news/:newsId", deleteNews);
 
-
-
-module.exports = router
+module.exports = router;
