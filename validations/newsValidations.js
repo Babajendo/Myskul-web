@@ -4,7 +4,7 @@ const validateNewsTable = (data) => {
   const ValidateNewsSchema = Joi.object({
     news_id: Joi.string().required(),
     titl: Joi.string().required(),
-    imgs: Joi.string(),
+    imgs: Joi.string().required(),
     shows: Joi.string(),
     storey: Joi.string(),
     dreg: Joi.string(),

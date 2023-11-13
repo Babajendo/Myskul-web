@@ -15,6 +15,7 @@ const Newz = sequelize.define(
     },
     imgs: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     shows: {
       type: DataTypes.STRING,
